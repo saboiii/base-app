@@ -2,32 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: "Montserrat";
+  src: url("/Montserrat/MontserratAlternates-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "Numans";
+  src: url("/Numans/Numans-Regular.ttf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base{
+  body{
+    @apply bg-white text-black text-sm
+  }
+  h1{
+    @apply text-[46px] md:text-[54px] lg:text-[64px] font-alternate leading-none
+  }
+  h2{
+    @apply text-[36px] md:text-[42px] lg:text-[48px] font-alternate leading-none
+  }
+
+  .newsletter-form {
+    --primary: #90d554;
+    --success: #b8f582;
+  }
+
+  .newsletter-form button {
+    --text-opacity: 1;
+    --success-opacity: 0;
+  }
+
+  .newsletter-form button:not(.active) {
+    background: var(--primary);
+  }
+
+  .newsletter-form button span {
+    display: block;
+    position: relative;
+    z-index: 4;
+    opacity: var(--text-opacity);
+  }
+
+  .newsletter-form button span.success {
+    z-index: 0;
+    position: absolute;
+    right:20px;
+    top: 6px;
+    opacity: var(--success-opacity);
+    color: var(--success);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.button-1{
+  @apply px-4 outline rounded-lg py-2 text-center
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.button-2{
+  @apply px-6 bg-black text-white rounded-lg py-4 text-center
 }
