@@ -7,13 +7,13 @@ const Navbar = () => {
         <div className='flex flex-row w-full h-24 px-12 md:px-28 justify-between items-center overflow-hidden'>
             <div className='flex'>
                 <Image
-                alt='Website logo.'
-                priority={true}
-                src='/basic.png'
-                width={100}
-                height={100}
-                className='w-24'
-                /> 
+                    alt='Website logo.'
+                    priority={true}
+                    src='/basic.png'
+                    width={100}
+                    height={100}
+                    className='w-24'
+                />
             </div>
             <div className='hidden md:flex flex-wrap gap-8 items-center'>
                 <Link href='/'>Home</Link>

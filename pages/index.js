@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>Basic | Home</title>
+        <title>Basic | Welcome</title>
         <meta name="description" content="Sample website for future use." />
       </Head>
       <div className="flex flex-col md:flex-row justify-between py-24 px-12 md:px-28">
